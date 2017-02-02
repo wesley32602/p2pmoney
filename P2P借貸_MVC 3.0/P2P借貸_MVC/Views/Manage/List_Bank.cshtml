@@ -1,0 +1,31 @@
+﻿@model  IEnumerable<P2P借貸_MVC.Models.Bank>
+
+@{
+    ViewBag.Title = "List_Bank";
+}
+
+<h2>銀行清單</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>銀行代碼</th>
+            <th>銀行名稱</th>
+            <th>編輯</th>
+            <th>刪除</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.BankCode</td>
+                <td>@item.BankName</td>
+                <td><a href="~/Manage/Bank_Edit/@item.BankCode" class="btn btn-primary">編輯</a></td>
+                <td><a href="~/Manage/Bank_Delete/@item.BankCode" class="btn btn-danger">刪除</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>

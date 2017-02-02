@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="P2P借貸平台_2Model1StoreContainer" CdmEntityContainer="P2P借貸平台_2Entities1">
+    <EntitySetMapping Name="Standard_case">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.Standard_case">
+        <MappingFragment StoreEntitySet="Standard case">
+          <ScalarProperty Name="StandcaseID" ColumnName="StandcaseID" />
+          <ScalarProperty Name="MemberSponer" ColumnName="MemberSponer" />
+          <ScalarProperty Name="Memberprople" ColumnName="Memberprople" />
+          <ScalarProperty Name="Casemoney" ColumnName="Casemoney" />
+          <ScalarProperty Name="CaseMonth" ColumnName="CaseMonth" />
+          <ScalarProperty Name="CaseFirstday" ColumnName="CaseFirstday" />
+          <ScalarProperty Name="CaseEndnay" ColumnName="CaseEndnay" />
+          <ScalarProperty Name="MoneyForday" ColumnName="MoneyForday" />
+          <ScalarProperty Name="CaseStatus" ColumnName="CaseStatus" />
+          <ScalarProperty Name="CaseStatus2" ColumnName="CaseStatus2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Standard_case_details">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.Standard_case_details">
+        <MappingFragment StoreEntitySet="Standard case details">
+          <ScalarProperty Name="StandcaseID" ColumnName="StandcaseID" />
+          <ScalarProperty Name="MerberID" ColumnName="MerberID" />
+          <ScalarProperty Name="MerberAccount" ColumnName="MerberAccount" />
+          <ScalarProperty Name="BidPrice" ColumnName="BidPrice" />
+          <ScalarProperty Name="GetStandard" ColumnName="GetStandard" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Standard_case_fraction">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.Standard_case_fraction">
+        <MappingFragment StoreEntitySet="Standard case fraction">
+          <ScalarProperty Name="MermberID" ColumnName="MermberID" />
+          <ScalarProperty Name="MermberFraction" ColumnName="MermberFraction" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Standard_case_history">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.Standard_case_history">
+        <MappingFragment StoreEntitySet="Standard case history">
+          <ScalarProperty Name="SID" ColumnName="SID" />
+          <ScalarProperty Name="StandcaseID" ColumnName="StandcaseID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberAccount" ColumnName="MemberAccount" />
+          <ScalarProperty Name="Remittancetime" ColumnName="Remittancetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Standard_case_talk">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.Standard_case_talk">
+        <MappingFragment StoreEntitySet="Standard case talk">
+          <ScalarProperty Name="StandcaseID" ColumnName="StandcaseID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberTalk" ColumnName="MemberTalk" />
+          <ScalarProperty Name="TalkTime" ColumnName="TalkTime" />
+          <ScalarProperty Name="SID" ColumnName="SID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BasicInfo">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model1.BasicInfo">
+        <MappingFragment StoreEntitySet="BasicInfo">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MemberNickName" ColumnName="MemberNickName" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="最高學歷" ColumnName="最高學歷" />
+          <ScalarProperty Name="就業狀態" ColumnName="就業狀態" />
+          <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

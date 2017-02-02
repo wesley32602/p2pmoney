@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="P2P借貸平台_2Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Standard case">
+    <Key>
+      <PropertyRef Name="StandcaseID" />
+    </Key>
+    <Property Name="StandcaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberSponer" Type="int" />
+    <Property Name="Memberprople" Type="int" />
+    <Property Name="Casemoney" Type="int" />
+    <Property Name="CaseMonth" Type="int" />
+    <Property Name="CaseFirstday" Type="date" />
+    <Property Name="CaseEndnay" Type="date" />
+    <Property Name="MoneyForday" Type="date" />
+    <Property Name="CaseStatus" Type="bit" />
+    <Property Name="CaseStatus2" Type="bit" />
+  </EntityType>
+  <EntityType Name="Standard case details">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="StandcaseID" Type="int" Nullable="false" />
+    <Property Name="MerberID" Type="int" />
+    <Property Name="MerberAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="BidPrice" Type="int" />
+    <Property Name="GetStandard" Type="bit" />
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Standard case fraction">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="MermberID" Type="int" />
+    <Property Name="MermberFraction" Type="nvarchar" MaxLength="50" />
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Standard case history">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" Nullable="false" />
+    <Property Name="StandcaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberID" Type="int" />
+    <Property Name="MemberAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remittancetime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Standard case talk">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="StandcaseID" Type="int" />
+    <Property Name="MemberID" Type="int" />
+    <Property Name="MemberTalk" Type="varchar(max)" />
+    <Property Name="TalkTime" Type="datetime" />
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BasicInfo">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MemberNickName" Type="nvarchar" MaxLength="50" />
+    <Property Name="eMail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="最高學歷" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="就業狀態" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkPlace" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BankCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BankAccount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="varbinary(max)" />
+    <Property Name="PermissionLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Standard case details_Standard case">
+    <End Role="Standard case" Type="Self.Standard case" Multiplicity="1" />
+    <End Role="Standard case details" Type="Self.Standard case details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Standard case">
+        <PropertyRef Name="StandcaseID" />
+      </Principal>
+      <Dependent Role="Standard case details">
+        <PropertyRef Name="StandcaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Standard case history_Standard case">
+    <End Role="Standard case" Type="Self.Standard case" Multiplicity="1" />
+    <End Role="Standard case history" Type="Self.Standard case history" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Standard case">
+        <PropertyRef Name="StandcaseID" />
+      </Principal>
+      <Dependent Role="Standard case history">
+        <PropertyRef Name="StandcaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Standard case talk_Standard case">
+    <End Role="Standard case" Type="Self.Standard case" Multiplicity="0..1" />
+    <End Role="Standard case talk" Type="Self.Standard case talk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Standard case">
+        <PropertyRef Name="StandcaseID" />
+      </Principal>
+      <Dependent Role="Standard case talk">
+        <PropertyRef Name="StandcaseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Standard case_BasicInfo">
+    <End Role="BasicInfo" Type="Self.BasicInfo" Multiplicity="0..1" />
+    <End Role="Standard case" Type="Self.Standard case" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BasicInfo">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="Standard case">
+        <PropertyRef Name="MemberSponer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="P2P借貸平台_2Model1StoreContainer">
+    <EntitySet Name="Standard case" EntityType="Self.Standard case" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Standard case details" EntityType="Self.Standard case details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Standard case fraction" EntityType="Self.Standard case fraction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Standard case history" EntityType="Self.Standard case history" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Standard case talk" EntityType="Self.Standard case talk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BasicInfo" EntityType="Self.BasicInfo" Schema="Member" store:Type="Tables" />
+    <AssociationSet Name="FK_Standard case details_Standard case" Association="Self.FK_Standard case details_Standard case">
+      <End Role="Standard case" EntitySet="Standard case" />
+      <End Role="Standard case details" EntitySet="Standard case details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Standard case history_Standard case" Association="Self.FK_Standard case history_Standard case">
+      <End Role="Standard case" EntitySet="Standard case" />
+      <End Role="Standard case history" EntitySet="Standard case history" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Standard case talk_Standard case" Association="Self.FK_Standard case talk_Standard case">
+      <End Role="Standard case" EntitySet="Standard case" />
+      <End Role="Standard case talk" EntitySet="Standard case talk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Standard case_BasicInfo" Association="Self.FK_Standard case_BasicInfo">
+      <End Role="BasicInfo" EntitySet="BasicInfo" />
+      <End Role="Standard case" EntitySet="Standard case" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<P2P借貸_MVC.Areas.AreaCollater.Models.CollaterDetail>
+
+<div style="height:20px"></div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+            <div class="list-group">
+                <a href="~/AreaCollater/collater/Insert" class="list-group-item">新增貸款申請書</a>
+                <a href="~/AreaCollater/collater/Index" class="list-group-item">投資專區</a>
+                <a href="#" class="list-group-item">購物專區</a>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">投資專區</h3>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>@Html.DisplayNameFor(p => p.First().MemberName)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().loanPrice)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().CollateralName)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().Collateraluse)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().interestrate)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().CollateralEX)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().Collateralsituation)</th>
+                            <th>@Html.DisplayNameFor(p => p.First().Collateralimage)</th>
+                            <th>編輯</th>
+                            <th>刪除</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var collaters in Model)
+                        {
+                            <tr>
+                                <td>@collaters.MemberName</td>
+
+                                <td>@collaters.loanPrice</td>
+
+                                <td>@collaters.CollateralName</td>
+
+                                <td>@collaters.Collateraluse</td>
+
+                                <td>@collaters.interestrate</td>
+
+                                <td>@collaters.CollateralEX</td>
+
+                                <td>@collaters.Collateralsituation</td>
+
+                                <td><img style="width:150px" class="img-thumbnail img-responsive thumb" src="@Url.Action("GetImageByte","Collater",new {id=collaters.CollateralID})" /></td>
+
+                                <td><a href="~/AreaCollater/collater/Edit/@collaters.CollateralID" class="btn btn-primary">編輯</a></td>
+
+                                <td><a href="~/AreaCollater/collater/Delete/@collaters.CollateralID" class="btn btn-danger">刪除</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

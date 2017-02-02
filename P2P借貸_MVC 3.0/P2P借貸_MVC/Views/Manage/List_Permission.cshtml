@@ -1,0 +1,31 @@
+﻿@model  IEnumerable<P2P借貸_MVC.Models.Definition>
+
+@{
+    ViewBag.Title = "List_Permission";
+}
+
+<h2>權限清單</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>權限 ID</th>
+            <th>權限說明</th>
+            <th>編輯</th>
+            <th>刪除</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.PermissionLevel</td>
+                <td>@item.PermissionCall</td>
+                <td><a href="~/Manage/PermissionLevel_Edit/@item.PermissionLevel" class="btn btn-primary">編輯</a></td>
+                <td><a href="~/Manage/PermissionLevel_Delete/@item.PermissionLevel" class="btn btn-danger">刪除</a></td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
