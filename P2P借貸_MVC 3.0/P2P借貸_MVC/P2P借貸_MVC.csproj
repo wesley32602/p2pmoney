@@ -201,6 +201,7 @@
     <Content Include="Areas\AreaCollater\Views\collater\Insert.cshtml" />
     <Content Include="Areas\AreaCollater\Views\collater\Edit.cshtml" />
     <Content Include="Areas\AreaCollater\Views\collater\Delete.cshtml" />
+    <Content Include="Areas\Forum\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -247,6 +248,7 @@
     </Compile>
     <Compile Include="Areas\AreaCollater\Models\P2PRepository.cs" />
     <Compile Include="Areas\AreaCollater\Models\partial\CollaterDetail.cs" />
+    <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Standard_Case\Controllers\Stand_CaseController.cs" />
     <Compile Include="Areas\Standard_Case\Models\BasicInfo.cs">
       <DependentUpon>Stand_CaseModel.tt</DependentUpon>
@@ -343,7 +345,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Forum\Controllers\" />
+    <Folder Include="Areas\Forum\Models\" />
+    <Folder Include="Areas\Forum\Views\Shared\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
