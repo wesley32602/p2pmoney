@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="P2P借貸平台_2Model2StoreContainer" CdmEntityContainer="P2P借貸平台_2Entities2">
+    <EntitySetMapping Name="CollaterDetail">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model2.CollaterDetail">
+        <MappingFragment StoreEntitySet="CollaterDetail">
+          <ScalarProperty Name="CollateralID" ColumnName="CollateralID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="CollateralName" ColumnName="CollateralName" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="interestrate" ColumnName="interestrate" />
+          <ScalarProperty Name="CollateralEX" ColumnName="CollateralEX" />
+          <ScalarProperty Name="Collateralimage" ColumnName="Collateralimage" />
+          <ScalarProperty Name="loanPrice" ColumnName="loanPrice" />
+          <ScalarProperty Name="Collateralsituation" ColumnName="Collateralsituation" />
+          <ScalarProperty Name="Collateraluse" ColumnName="Collateraluse" />
+          <ScalarProperty Name="investmentID" ColumnName="investmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BasicInfo">
+      <EntityTypeMapping TypeName="P2P借貸平台_2Model2.BasicInfo">
+        <MappingFragment StoreEntitySet="BasicInfo">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MemberNickName" ColumnName="MemberNickName" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="最高學歷" ColumnName="最高學歷" />
+          <ScalarProperty Name="就業狀態" ColumnName="就業狀態" />
+          <ScalarProperty Name="WorkPlace" ColumnName="WorkPlace" />
+          <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+          <ScalarProperty Name="BankAccount" ColumnName="BankAccount" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="PermissionLevel" ColumnName="PermissionLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

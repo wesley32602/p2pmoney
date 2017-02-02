@@ -1,0 +1,43 @@
+﻿@model IEnumerable<P2P借貸_MVC.Areas.Standard_Case.Models.Standard_case>
+@{
+    ViewBag.Title = "Loading";
+}
+
+<h2>Loading</h2>
+
+<a href="~/Standard_Case/Stand_Case/Create" class="btn btn-primary">新增</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(p => p.StandcaseID)</th>
+            <th>@Html.DisplayNameFor(p => p.MemberSponer)</th>
+            <th>已參加人數</th>
+            <th>@Html.DisplayNameFor(p => p.Memberprople)</th>
+            <th>@Html.DisplayNameFor(p => p.Casemoney)</th>
+            <th>@Html.DisplayNameFor(p => p.CaseMonth)</th>
+            <th>@Html.DisplayNameFor(p => p.CaseFirstday)</th>
+            <th>@Html.DisplayNameFor(p => p.CaseEndnay)</th>
+            <th>@Html.DisplayNameFor(p => p.MoneyForday)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.StandcaseID</td>
+                <td>@Html.DisplayFor(p => q.MemberSponer)</td>
+                <td>@q.Standard_case_details.Count()</td>
+                <td>@Html.DisplayFor(p => q.Memberprople)</td>
+                <td>@Html.DisplayFor(p => q.Casemoney)</td>
+                <td>@Html.DisplayFor(p => q.CaseMonth)</td>
+                <td>@Html.DisplayFor(p => q.CaseFirstday)</td>
+                <td>@Html.DisplayFor(p => q.CaseEndnay)</td>
+                <td>@Html.DisplayFor(p => q.MoneyForday)</td>
+                <td><a href="~/Standard_Case/Stand_Case/Inter/@q.StandcaseID" class="btn btn-primary">加入</a></td>
+                <td><a href="~/Standard_Case/Stand_Case/Edit/@q.StandcaseID" class="btn btn-primary">編輯</a></td>
+                <td><a href="~/Standard_Case/Stand_Case/Delete/@q.StandcaseID" class="btn btn-danger">刪除</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
